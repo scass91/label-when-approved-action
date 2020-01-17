@@ -68,10 +68,9 @@ update_label() {
   done
 }
 
-approved=[[ "$action" == "submitted" ]] && [[ "$state" == "approved" ]];
-dismissed=[[ "$action" == "dismissed" ]] && [[ "$state" == "dismissed" ]];
-
-if [ $approved ] || [ $dismissed ]; then
+if [[ "$action" == "submitted" ]] && [[ "$state" == "approved" ]]; then
+  update_label
+elif [[ "$action" == "dismissed" ]] && [[ "$state" == "dismissed" ]]; then
   update_label
 else
   echo "Ignoring event ${action}/${state}"
