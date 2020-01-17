@@ -64,7 +64,6 @@ update_label() {
             -H "${API_HEADER}" \
             -X DELETE \
             "${URI}/repos/${GITHUB_REPOSITORY}/issues/${number}/labels/${NEEDS_ONE_REVIEW}"
-      fi
     fi
   done
 }
